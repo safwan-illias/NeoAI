@@ -60,7 +60,6 @@ canvas {
     text-align: center;
     z-index: 2;
     max-width: 1200px;
-    z-index: 2;
      
 }
   
@@ -96,11 +95,12 @@ canvas {
     color: white;           /* Default text color is white */
     font-family: 'Courier New', Courier, monospace; /* Font style */
     font-size: 50px !important;        /* Font size */
-    line-height: 1.5;       /* Line height for better readability */
+    line-height: 1.0;       /* Line height for better readability */
     width: 100%;             /* Adjust width to make it look better on desktop and mobile */
     max-width: 1500px;       /* Maximum width for large screens */
     margin: 20px auto;      /* Center the text block and add spacing */
     text-align: center;     /* Center the text inside the box */
+    margin-top: 50px;
   }
 
   .bordered-text {
