@@ -18,7 +18,7 @@ resizeCanvas();
 
 const fontSize = 25;
 const columns = canvas.width / fontSize;
-const drops = Array(Math.floor(columns)).fill(1);
+const drops = Array(Math.floor(columns)).fill(0).map(() => Math.random() * canvas.height); // Random starting positions
 
 function drawMatrix() {
   ctx.fillStyle = 'rgba(0, 0, 0, 0.08)';
@@ -28,13 +28,21 @@ function drawMatrix() {
   ctx.font = `${fontSize}px monospace`;
 
   drops.forEach((y, x) => {
+    // Display the character at the current drop position
     const text = String.fromCharCode(0x30A0 + Math.random() * 96);
     ctx.fillText(text, x * fontSize, y * fontSize);
 
-    drops[x] = y * fontSize > canvas.height && Math.random() > 0.95 ? 0 : y + 0.85;
+    // Update the drop's position, making it fall
+    drops[x] = y + 0.85;
+
+    // Reset drop to the top when it reaches the bottom
+    if (y * fontSize > canvas.height && Math.random() > 0.95) {
+      drops[x] = 0; // Reset drop to the top
+    }
   });
 
-  setTimeout(() => requestAnimationFrame(drawMatrix), 60); // Slows down the effect
+  setTimeout(() => requestAnimationFrame(drawMatrix), 70); // Slows down the effect
 }
+
 
 drawMatrix();
