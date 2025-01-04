@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neo.AI</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+        margin: 0;
+        background-color: black;
+        color: #0F0;
+        font-family: 'Courier New', Courier, monospace;
+        overflow: hidden; /* Allow scrolling */
+    }
+    canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    #messageContainer {
+        font-size: 24px;
+        margin: 0;
+        padding: 10px;
+        border: 2px solid #0F0; /* Green border */
+        border-radius: 15px; /* Rounded corners */
+        background-color: rgba(0, 0, 0, 0.7); /* Dark background */
+        display: inline-block; /* Adjust size to fit text */
+        position: fixed; /* Keeps the message in place */
+        top: 20px; /* Fixed top distance from the viewport */
+        left: 20px; /* Fixed left distance from the viewport */
+        z-index: 10; /* Make sure it's visible on top */
+        width: auto; /* Width should fit the content */
+    }
+
+    .message {
+        display: inline-block;
+    }
+
+    .typing {
+        border-right: 2px solid #0F0;
+        animation: blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes blink-caret {
+        50% {
+            border-color: transparent;
+        }
+    }
+</style>
+
+</head>
+
+<body>
+    <div class="matrix-bg"></div>
+    <canvas id="canvas"></canvas>
+    
+    <div id="messageContainer"></div>
+    <script>
+        const messageContainer = document.getElementById('messageContainer');
+        const message = "Wake up, Neo......";
+
+        function typeMessage(callback) {
+            let charIndex = 0;
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message', 'typing');
+            messageElement.innerHTML = '';
+            messageContainer.innerHTML = '';  // Clear previous messages
+            messageContainer.appendChild(messageElement);
+
+            const typingInterval = setInterval(() => {
+                messageElement.innerHTML += message.charAt(charIndex);
+                charIndex++;
+                if (charIndex === message.length) {
+                    clearInterval(typingInterval);
+                    setTimeout(() => {
+                        setTimeout(() => {
+                            deleteMessage(callback);
+                        }, 2000); // Wait for 2 seconds (blinking cursor)
+                    }, 5000); // Hold the message for 5 seconds
+                }
+            }, 100);
+        }
+
+        function deleteMessage(callback) {
+            const messageElement = messageContainer.lastElementChild;
+            let charIndex = message.length;
+            const deletingInterval = setInterval(() => {
+                messageElement.innerHTML = messageElement.innerHTML.slice(0, -1);
+                charIndex--;
+                if (charIndex === 0) {
+                    clearInterval(deletingInterval);
+                    setTimeout(() => {
+                        callback(); // Call the typeMessage again
+                    }, 2000); // Wait for 2 seconds (blinking cursor)
+                }
+            }, 100);
+        }
+
+        function startConversation() {
+            typeMessage(startConversation); // Start the typing and deletion loop
+        }
+
+        // Start the conversation when the page loads
+        window.onload = startConversation;
+    </script>
+
+    <div id="content">
+        <div class="main-text">
+        Not All <span class="green-bold"><strong>A</strong></span><span class="red-bold"><strong>.I</strong></span> Are What They Appear to Be
+        </div>
+        <div class="bordered-text">
+          <span class="green-bold"><strong>NeoGuard.AI</strong></span> ($GUARD) is an <span class="green-bold"><strong>AI agent</strong></span> that helps protect society from <span class="red-bold"><strong>harmful AI agents</strong></span>. It tracks and ranks AI agents based on their behavior, giving a risk score to highlight potential threats. With blockchain and community involvement, <span class="green-bold"><strong>NeoGuard.AI</strong></span> ensures transparency and accountability in AI systems.
+        </div>
+        <div class="bordered-text">
+            <span class="green-bold"><strong>Mission: </strong></span> To protect humanity by monitoring and mitigating risks from <span class="red-bold"><strong>harmful AI agents</strong></span>through transparent analysis, ranking, and community engagement.  <span class="green-bold"><strong>NeoGuard.AI</strong></span>. It tracks and ranks AI agents based on their behavior, giving a risk score to highlight potential threats. With blockchain and community involvement, <span class="green-bold"><strong>NeoGuard.AI</strong></span> is an <span class="green-bold"><strong>AI agent</strong></span>that helps protect society.
+          </div>
+        <img src="keanu_front.jpg" alt="Neo AI Logo" class="main-image">
+        <div class="social-links">
+            <a href="DRAFT LITEPAPER v0.1.pdf" target="_blank">Litepaper</a>
+            <a href="https://twitter.com" target="_blank">X</a>
+            <a href="https://discord.com" target="_blank">Telegram</a>
+            </div>
+        </div>
+    <script src="script.js"></script>
+</body>
+</html>

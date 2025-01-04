@@ -1,0 +1,139 @@
+/* Reset styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrollbars */
+    height: 100%; /* Make the body take full height */
+  }
+  
+  body {
+    position: relative;
+    background: black; /* Ensure no white background */
+  }
+  
+  .matrix-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+
+canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+    /* Matrix Background */
+  .matrix-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    overflow: hidden;
+    z-index: -1;
+  }
+  
+    
+  @keyframes scroll {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+  
+  /* Content */
+  #content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+}
+  
+  .h1 {
+    font-size: 30px;
+    margin-bottom: 1rem;
+  }
+  
+  .p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .social-links a {
+    background-color: rgba(0, 0, 0, 0.3); /* Dark background */
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 2rem;
+    font-family: 'Courier New', Courier, monospace; /* Change to your desired font */
+    font-weight: bold; /* Makes the text bold */
+    transition: color 0.5s;
+    margin-right: 15px;
+  }
+  
+  .social-links a:hover {
+    color: #44ff00;
+  }
+  
+  .main-text {
+    display: inline-block;  /* Makes the div fit the text size */
+    background-color: rgba(0, 0, 0, 0.3); /* Dark background */
+    color: white;           /* Default text color is white */
+    font-family: 'Courier New', Courier, monospace; /* Font style */
+    font-size: 50px !important;        /* Font size */
+    line-height: 1.5;       /* Line height for better readability */
+    width: 100%;             /* Adjust width to make it look better on desktop and mobile */
+    max-width: 1500px;       /* Maximum width for large screens */
+    margin: 20px auto;      /* Center the text block and add spacing */
+    text-align: center;     /* Center the text inside the box */
+  }
+
+  .bordered-text {
+    display: inline-block;  /* Makes the div fit the text size */
+    padding: 20px;          /* Adds padding around the text */
+    border: 2px solid #0F0; /* Green border */
+    border-radius: 8px;     /* Rounded corners */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+    color: white;           /* Default text color is white */
+    font-family: 'Courier New', Courier, monospace; /* Font style */
+    font-size: 18px;        /* Font size */
+    line-height: 1.5;       /* Line height for better readability */
+    width: 80%;             /* Adjust width to make it look better on desktop and mobile */
+    max-width: 800px;       /* Maximum width for large screens */
+    margin: 20px auto;      /* Center the text block and add spacing */
+    text-align: center;     /* Center the text inside the box */
+  }
+  
+  .green-bold {
+    color: #0F0;            /* Green color for NeoGuard.AI and AI agent */
+    font-weight: bold;      /* Make them bold */
+  }
+  
+  .red-bold {
+    color: red;            /* Red color for harmful AI agents */
+    font-weight: bold;     /* Make it bold */
+  }
+
+  .main-image {
+    width: 100%;  /* Adjust the width as needed */
+    max-width: 700px;  /* Set a max width */
+    display: block;
+    margin: 20px auto;  /* Center the image */
+}
+
+@media (max-width: 2184px) {
+    body {
+        background-size: contain; /* or any other adjustment */
+    }
+}
