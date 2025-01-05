@@ -43,7 +43,22 @@ canvas {
     z-index: -1;
   }
   
-    
+  .button {
+    display: inline-block;
+    text-decoration: none; /* Remove underline from the link */
+    color: #fff; /* Text color */
+    background-color: #00AA00; /* Button background color */
+    padding: 10px 20px; /* Button padding */
+    font-size: 1.1em; /* Font size */
+    border-radius: 6px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+}
+
+.button:hover {
+    background-color: #077607; /* Darker shade on hover */
+    transform: scale(1.02); /* Slightly increase size on hover */
+}
+  
   @keyframes scroll {
     from {
       transform: translateY(0);
@@ -76,6 +91,7 @@ canvas {
   .social-links a {
     background-color: rgba(0, 0, 0, 0.3); /* Dark background */
     color: #ffffff;
+	text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
     text-decoration: none;
     margin: 0 1rem;
     font-size: 2rem;
@@ -93,6 +109,7 @@ canvas {
     display: inline-block;  /* Makes the div fit the text size */
     background-color: rgba(0, 0, 0, 0.3); /* Dark background */
     color: white;           /* Default text color is white */
+	text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
     font-family: 'Courier New', Courier, monospace; /* Font style */
     font-size: 50px !important;        /* Font size */
     line-height: 1.0;       /* Line height for better readability */
@@ -106,7 +123,7 @@ canvas {
   .bordered-text {
     display: inline-block;  /* Makes the div fit the text size */
     padding: 20px;          /* Adds padding around the text */
-    border: 2px solid #0F0; /* Green border */
+    border: 2px solid #00A700; /* Green border */
     border-radius: 8px;     /* Rounded corners */
     background-color: rgba(0, 0, 0, 0.8); /* Dark background */
     color: white;           /* Default text color is white */
@@ -118,6 +135,68 @@ canvas {
     margin: 20px auto;      /* Center the text block and add spacing */
     text-align: center;     /* Center the text inside the box */
   }
+
+.bordered-text-ca {
+    display: inline-block;  /* Makes the div fit the text size */
+    padding: 5px;          /* Adds padding around the text */
+    border: 0px solid #00A700; /* Green border */
+    border-radius: 6px;     /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.75); /* Dark background */
+    color: #082600;           /* Default text color is white */
+    font-family: 'Courier New', Courier, monospace; /* Font style */
+    font-size: 20px;        /* Font size */
+    line-height: 1.5;       /* Line height for better readability */
+    width: 80%;             /* Adjust width to make it look better on desktop and mobile */
+    max-width: 650px;       /* Maximum width for large screens */
+    margin: 30px auto;      /* Center the text block and add spacing */
+    text-align: center;     /* Center the text inside the box */
+  }
+
+.team-section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .team-section h2 {
+			color: #00AA00;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+			text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
+        }
+
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .team-member {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .team-member img {
+            width: 100%;
+            height: auto;
+        }
+
+        .team-member h3 {
+            color: #00AA00;
+			font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .team-member p {
+            color: #292828;
+            font-size: 0.9em;
+            margin: 0 10px 20px;
+        }
+
   
   .green-bold {
     color: #0F0;            /* Green color for NeoGuard.AI and AI agent */
