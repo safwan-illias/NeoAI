@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NeoAI</title>
+  <title>NeoAI Sentinel</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <style>
     body {
@@ -53,10 +54,7 @@
 </head>
 
 <body>
-    <div class="matrix-bg"></div>
-    <canvas id="canvas"></canvas>
-    
-    <div id="messageContainer"></div>
+	<div id="messageContainer"></div>
     <script>
         const messageContainer = document.getElementById('messageContainer');
         const message = "Wake up, Neo......";
@@ -105,21 +103,23 @@
         // Start the conversation when the page loads
         window.onload = startConversation;
     </script>
-
-    <div id="content">
+	<div class="matrix-bg"></div>
+    <canvas id="canvas"></canvas>
+    
+        <div id="content">
         <div class="main-text">
         Not All <span class="green-bold"><strong>A</strong></span><span class="red-bold"><strong>.I</strong></span> Are What They Appear to Be
         </div>
 		<div class="bordered-text-ca">
           CA: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
         </div>
-		<a href="https://jup.ag/swap/SOL-JLP" class="button" target="_blank">BUY $NEO</a>
+		<a href="https://jup.ag/swap/SOL-JLP" class="button" target="_blank">BUY $NeoAI</a>
 		<img src="keanu_front.jpg" alt="Neo AI Logo" class="main-image">
         <div class="bordered-text">
-          <span class="green-bold"><strong>NeoAI</strong></span> ($NEO) is an <span class="green-bold"><strong>AI agent</strong></span> that helps protect society from <span class="red-bold"><strong>harmful AI agents</strong></span>. It tracks and ranks AI agents based on their behavior, giving a risk score to highlight potential threats. With blockchain and community involvement, <span class="green-bold"><strong>NeoAI</strong></span> ensures transparency and accountability in AI systems.
+          <span class="green-bold"><strong>NeoAI</strong></span> ($NeoAI) is an <span class="green-bold"><strong>AI Sentinel Agent</strong></span> that helps protect society from <span class="red-bold"><strong>harmful AI agents</strong></span>. It tracks and ranks AI agents based on their behavior, giving a risk score to highlight potential threats. With blockchain and community involvement, <span class="green-bold"><strong>NeoAI</strong></span> ensures transparency and accountability in AI systems.
         </div>
         <div class="bordered-text">
-            <span class="green-bold"><strong>Mission: </strong></span> To protect humanity by monitoring and mitigating risks from <span class="red-bold"><strong>harmful AI agents </strong></span>through transparent analysis, ranking, and community engagement.  <span class="green-bold"><strong>NeoAI</strong></span>. It tracks and ranks AI agents based on their behavior, giving a risk score to highlight potential threats. With blockchain and community involvement, <span class="green-bold"><strong>NeoAI</strong></span> is an <span class="green-bold"><strong>AI agent </strong></span>that helps protect society.
+            <span class="green-bold"><strong>Mission: </strong></span> To protect humanity by monitoring and mitigating risks from <span class="red-bold"><strong>harmful AI agents </strong></span>through transparent analysis, ranking, and community engagement. With blockchain and community involvement, <span class="green-bold"><strong>NeoAI</strong></span> is an <span class="green-bold"><strong>AI agent </strong></span>that helps protect society.
           </div>
         
         <div class="social-links">
@@ -147,8 +147,13 @@
                 <p>Bridging the AI and Crypto Worlds</p>              
             </div>
         </div>
-    </section>
-        </div>
+			<section class="team-section">
+			<h3>Tokenomics</h3>
+			<img src="Tokenomic.png" alt="Tokenomics" class="tokenomic">
+		</section>
+		  </section>
+		</div>
     <script src="script.js"></script>
+	
 </body>
 </html>
