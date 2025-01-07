@@ -227,7 +227,7 @@ canvas {
     max-width: 700px;  /* Set a max width */
     display: block;
     margin: 5px auto;  /* Center the image */
-
+}
 @media (max-width: 768px) {
     .bordered-text {
         width: 95%; /* Full width on small devices */
