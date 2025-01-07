@@ -237,11 +237,3 @@ canvas {
         font-size: 30px;
     }
 }
-canvas#tokenomicsChart {
-    display: block;
-    margin: 0 auto; /* Center the chart horizontally */
-    position: relative; /* Ensure it is not fixed */
-    width: 60%; /* Adjust the size of the chart */
-    max-width: 600px; /* Optional: restrict maximum size */
-    height: auto; /* Maintain aspect ratio */
-    z-index: 2; /* Ensure it appears above the background */}
